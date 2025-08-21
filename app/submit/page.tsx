@@ -59,7 +59,7 @@ export default function SubmitPage() {
       <Link href="/" className="text-[#0b88b6] font-bold">← Back to Choose</Link>
       
       <div className="mt-6">
-        <h1 className="text-3xl font-extrabold mb-2">Share Founder's Story</h1>
+        <h1 className="text-3xl font-extrabold mb-2">Share Founder&rsquo;s Story</h1>
         <p className="text-gray-600 mb-8">Share any interesting stories or thoughts with us.</p>
         
         {message && (
