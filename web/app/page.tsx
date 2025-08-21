@@ -35,7 +35,7 @@ export default async function Home({ searchParams }: { searchParams?: Promise<{ 
         <Link href="/profile" className="hover:underline">Profile</Link>
       </nav>
 
-      <div className="mt-25 bg-gray-50 p-4 rounded">
+      <div className="mt-25 p-4">
         <p className="text-lg font-bold text-gray-800">
           Thanks <a href="https://www.thecrimson.com/article/2003/11/4/hot-or-not-website-briefly-judges/" target="_blank" rel="noopener noreferrer" className="text-[#0b88b6] underline">Mark Zuckerberg</a> for sharing the idea.
         </p>
