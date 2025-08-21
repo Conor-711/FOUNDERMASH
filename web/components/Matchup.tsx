@@ -88,7 +88,6 @@ export default function Matchup({ founders, track }: { founders: Founder[]; trac
   useEffect(() => {
 
     setPair(getTwoDistinctIndices(pool.length));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pool.length]);
 
   if (!Array.isArray(pool) || pool.length < 2) {

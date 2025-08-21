@@ -73,12 +73,12 @@ export async function GET(req: NextRequest) {
     }
 
     // Find the choice with the lowest percentage (most unpopular/unique choice)
-    let leastPopularVote = null;
+    let leastPopularVote: { aSlug: string; bSlug: string; winner: string; percentage: number } | null = null;
     let lowestPercentage = 101; // Start higher than possible percentage
     userVotes.forEach(vote => {
       if (vote.percentage < lowestPercentage) {
         lowestPercentage = vote.percentage;
-        leastPopularVote = vote;
+        leastPopularVote = vote as { aSlug: string; bSlug: string; winner: string; percentage: number };
       }
     });
 
@@ -202,18 +202,21 @@ export async function GET(req: NextRequest) {
 
     // Get statistics for least popular choice
     let leastPopularStats = null;
-    if (leastPopularVote && founderMap.has(leastPopularVote.aSlug) && founderMap.has(leastPopularVote.bSlug)) {
-      const founderA = founderMap.get(leastPopularVote.aSlug)!;
-      const founderB = founderMap.get(leastPopularVote.bSlug)!;
-      const winner = founderMap.get(leastPopularVote.winner)!;
+    if (leastPopularVote) {
+      const vote = leastPopularVote as { aSlug: string; bSlug: string; winner: string; percentage: number; track: string };
+      if (founderMap.has(vote.aSlug) && founderMap.has(vote.bSlug)) {
+        const founderA = founderMap.get(vote.aSlug)!;
+        const founderB = founderMap.get(vote.bSlug)!;
+        const winner = founderMap.get(vote.winner)!;
       
-      leastPopularStats = {
-        founderA,
-        founderB,
-        winner,
-        percentage: leastPopularVote.percentage,
-        track: leastPopularVote.track,
-      };
+        leastPopularStats = {
+          founderA,
+          founderB,
+          winner,
+          percentage: vote.percentage,
+          track: vote.track,
+        };
+      }
     }
 
     return NextResponse.json({
