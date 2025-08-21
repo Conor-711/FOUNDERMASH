@@ -3,11 +3,20 @@
   "name": "CZ",
   "track": "EXCHANGE",
   "summary": "Founder of Binance",
-  "life": "Background in CS and design. Previously at Startup X. Based in NYC.",
+  "life": "Founded Binance in 2017",
   "social": [
-    { "label": "Twitter", "url": "https://twitter.com" },
-    { "label": "LinkedIn", "url": "https://www.linkedin.com" }
+    {
+      "label": "Twitter",
+      "url": "https://x.com/cz_binance"
+    }
   ],
-  "project": { "name": "Binance", "description": "Developer tools and infrastructure platform.", "fdv": "$80M", "url": "#", "logo": "" },
+  "project": {
+    "name": "Binance",
+    "description": "Global crypto exchange with a broad trading ecosystem.",
+    "fdv": "116B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#10"
+  },
   "score": 88
 }

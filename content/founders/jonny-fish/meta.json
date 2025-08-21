@@ -1,0 +1,22 @@
+{
+  "slug": "jonny-fish",
+  "name": "Jonny Fish",
+  "track": "OTHER",
+  "summary": "Founder of Sidekick",
+  "life": "Founded Sidekick in 2023",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/HeyfishYC"
+    }
+  ],
+  "project": {
+    "name": "Sidekick",
+    "description": "One-stop live-stream trading platform for sharing insights and trading digital assets in real time.",
+    "fdv": "$0.2B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#45"
+  },
+  "score": 40
+}

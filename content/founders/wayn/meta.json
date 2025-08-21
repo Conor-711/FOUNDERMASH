@@ -1,0 +1,26 @@
+{
+  "slug": "wayn",
+  "name": "wayn",
+  "track": "L1/L2",
+  "summary": "Founder of Galxe",
+  "life": "Founded Galxe in 2021",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/charleswayn"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/charleswayn"
+    }
+  ],
+  "project": {
+    "name": "Galxe",
+    "description": "Web3 identity and credential infrastructure platform for community-based on-chain reputation.",
+    "fdv": "$0.13B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#111"
+  },
+  "score": 40
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "zhusu",
+  "name": "zhusu",
+  "track": "OTHER",
+  "summary": "Founder of 0XFUN",
+  "life": "Founded 0XFUN in 2024",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/zhusu"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/su-zhu-345b0b3/"
+    }
+  ],
+  "project": {
+    "name": "OX.FUN",
+    "description": "N/A",
+    "fdv": "N/A",
+    "url": "#",
+    "logo": "",
+    "mindshare": "N/A"
+  },
+  "score": 40
+}

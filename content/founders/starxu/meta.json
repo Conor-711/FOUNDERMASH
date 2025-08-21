@@ -3,11 +3,20 @@
   "name": "Star Xu",
   "track": "EXCHANGE",
   "summary": "Founder of OKX",
-  "life": "Background in CS and design. Previously at Startup X. Based in NYC.",
+  "life": "Founded OKX in 2013",
   "social": [
-    { "label": "Twitter", "url": "https://twitter.com" },
-    { "label": "LinkedIn", "url": "https://www.linkedin.com" }
+    {
+      "label": "Twitter",
+      "url": "https://x.com/star_okx"
+    }
   ],
-  "project": { "name": "OKX", "description": "Developer tools and infrastructure platform.", "fdv": "$80M", "url": "#", "logo": "" },
+  "project": {
+    "name": "OKX",
+    "description": "Crypto exchange offering trading and DeFi services.",
+    "fdv": "40B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#11"
+  },
   "score": 86
 }

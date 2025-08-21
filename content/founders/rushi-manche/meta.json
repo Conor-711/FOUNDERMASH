@@ -1,0 +1,26 @@
+{
+  "slug": "rushi-manche",
+  "name": "Rushi Manche",
+  "track": "L1/L2",
+  "summary": "ex-Founder of Movement",
+  "life": "Founded Movement in 2023",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/rushimanche"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/rushimanche/"
+    }
+  ],
+  "project": {
+    "name": "Movement",
+    "description": "Modular framework for building Move-based infrastructure, applications, and blockchains across distributed environments.",
+    "fdv": "$1.2B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#579"
+  },
+  "score": 40
+}

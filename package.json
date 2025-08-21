@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "add:founder": "node scripts/add-founder.mjs"
+    "add:founder": "node scripts/add-founder.mjs",
+    "sync:founders": "node scripts/sync-founders-from-ts.mjs",
+    "fill:mindshare": "node scripts/add-mindshare-to-meta.mjs",
+    "bulk:update": "node scripts/bulk-update-founders.mjs"
   },
   "dependencies": {
     "@prisma/client": "^6.14.0",

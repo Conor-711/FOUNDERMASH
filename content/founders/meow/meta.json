@@ -1,0 +1,22 @@
+{
+  "slug": "meow",
+  "name": "meow",
+  "track": "EXCHANGE",
+  "summary": "Founder of Jupiter",
+  "life": "Founded Jupiter in 2021",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/weremeow"
+    }
+  ],
+  "project": {
+    "name": "Jupiter",
+    "description": "Solana-based DeFi aggregator for optimal swap execution.",
+    "fdv": "$3.5B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#170"
+  },
+  "score": 40
+}

@@ -1,0 +1,22 @@
+{
+  "slug": "dan-greer",
+  "name": "Dan Greer",
+  "track": "DEFI",
+  "summary": "Founder of Defi App",
+  "life": "Founded Defi App in 2024",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/0xUxDesign/"
+    }
+  ],
+  "project": {
+    "name": "Defi App",
+    "description": "Platform simplifying DeFi trading with self-custody, cross-chain swaps, and gas-free full-chain abstraction.",
+    "fdv": "$0.4B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#26"
+  },
+  "score": 40
+}

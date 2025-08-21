@@ -1,0 +1,22 @@
+{
+  "slug": "guy-young",
+  "name": "Guy Young",
+  "track": "OTHER",
+  "summary": "Founder of Ethena",
+  "life": "Founded Ethena in 2023",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/gdog97_"
+    }
+  ],
+  "project": {
+    "name": "Ethena",
+    "description": "The synthetic dollar protocol on Ethereum is used for the issuance of stable assets and high-yield savings.",
+    "fdv": "$9B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#34"
+  },
+  "score": 40
+}

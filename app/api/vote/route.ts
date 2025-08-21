@@ -12,7 +12,7 @@ function pairKey(a: string, b: string): { key: string; aSlug: string; bSlug: str
 
 export async function POST(req: NextRequest) {
   try {
-    const { a, b, winner } = await req.json();
+    const { a, b, winner, track, sessionId } = await req.json();
     if (!a || !b || !winner) {
       return NextResponse.json({ error: 'Missing params' }, { status: 400 });
     }
@@ -39,23 +39,57 @@ export async function POST(req: NextRequest) {
     const winnerVotes = winSorted === 'A' ? record.votesA : record.votesB;
     const percent = total > 0 ? Math.round((winnerVotes / total) * 100) : 50;
 
-    // Elo (ALL 类别)：读当前 rating（默认 0），根据赢家更新
-    const eloA = await prisma.elo.upsert({
+    // Elo (ALL 类别)：读当前 rating，根据赢家更新
+    const allEloA = await prisma.elo.upsert({
       where: { slug: aSlug },
-      create: { slug: aSlug, rating: 0 },
+      create: { slug: aSlug, rating: 1000 },
       update: {},
       select: { rating: true }
     });
-    const eloB = await prisma.elo.upsert({
+    const allEloB = await prisma.elo.upsert({
       where: { slug: bSlug },
-      create: { slug: bSlug, rating: 0 },
+      create: { slug: bSlug, rating: 1000 },
       update: {},
       select: { rating: true }
     });
 
-    const updated = updateElo(eloA.rating, eloB.rating, winSorted);
-    await prisma.elo.update({ where: { slug: aSlug }, data: { rating: updated.Ra } });
-    await prisma.elo.update({ where: { slug: bSlug }, data: { rating: updated.Rb } });
+    const allUpdated = updateElo(allEloA.rating, allEloB.rating, winSorted);
+    await prisma.elo.update({ where: { slug: aSlug }, data: { rating: allUpdated.Ra } });
+    await prisma.elo.update({ where: { slug: bSlug }, data: { rating: allUpdated.Rb } });
+
+    // Elo per track（若提供了 track）
+    if (track && typeof track === 'string' && track.toUpperCase() !== 'ALL') {
+      const t = track.toUpperCase();
+      const tA = await prisma.eloTrack.upsert({
+        where: { slug_track: { slug: aSlug, track: t } },
+        create: { slug: aSlug, track: t, rating: 1000 },
+        update: {},
+        select: { rating: true }
+      });
+      const tB = await prisma.eloTrack.upsert({
+        where: { slug_track: { slug: bSlug, track: t } },
+        create: { slug: bSlug, track: t, rating: 1000 },
+        update: {},
+        select: { rating: true }
+      });
+      const upT = updateElo(tA.rating, tB.rating, winSorted);
+      await prisma.eloTrack.update({ where: { slug_track: { slug: aSlug, track: t } }, data: { rating: upT.Ra } });
+      await prisma.eloTrack.update({ where: { slug_track: { slug: bSlug, track: t } }, data: { rating: upT.Rb } });
+    }
+
+    // Record user vote for profile statistics (if sessionId provided)
+    if (sessionId && typeof sessionId === 'string') {
+      await prisma.userVote.create({
+        data: {
+          sessionId,
+          aSlug,
+          bSlug, 
+          winner,
+          track: track || 'ALL',
+          percentage: percent,
+        },
+      });
+    }
 
     return NextResponse.json({ percent, total, count: winnerVotes, winner });
   } catch (e) {

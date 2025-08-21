@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { loadFounders } from '@/data/load-founders';
 import { prisma } from '@/lib/db';
 
-const CATEGORIES = ['ALL','DEFI','EXCHANGE','L1/L2','AI','NFT','STABLECOIN','OTHER'];
+const CATEGORIES = ['ALL','DEFI','EXCHANGE','L1/L2','OTHER'];
 
 export default async function RankingPage({ searchParams }: { searchParams?: Promise<{ track?: string }> }) {
   const params = (await searchParams) || {};
@@ -12,13 +12,25 @@ export default async function RankingPage({ searchParams }: { searchParams?: Pro
   const filtered = active === 'ALL' ? data : data.filter((d) => d.rank.track.toUpperCase() === active);
 
   // 当为 ALL 时按 Elo 排序；否则仍按静态 score（后续可扩展为分赛道 Elo）
+  const isAll = active === 'ALL';
   let sorted = [...filtered];
-  if (active === 'ALL') {
+  let ratingMap = new Map<string, number>();
+  if (isAll) {
     const elos = (await (prisma as any).elo.findMany()) as { slug: string; rating: number }[];
-    const ratingMap = new Map(elos.map((e: { slug: string; rating: number }) => [e.slug, e.rating] as const));
-    sorted.sort((a, b) => (ratingMap.get(b.slug) ?? 0) - (ratingMap.get(a.slug) ?? 0));
+    ratingMap = new Map(elos.map((e) => [e.slug, e.rating] as const));
+    sorted.sort((a, b) => {
+      const rb = ratingMap.get(b.slug) ?? 1000;
+      const ra = ratingMap.get(a.slug) ?? 1000;
+      return rb - ra || (b.score - a.score);
+    });
   } else {
-    sorted.sort((a, b) => b.score - a.score);
+    const elosT = (await (prisma as any).eloTrack.findMany({ where: { track: active } })) as { slug: string; track: string; rating: number }[];
+    ratingMap = new Map(elosT.map((e) => [e.slug, e.rating] as const));
+    sorted.sort((a, b) => {
+      const rb = ratingMap.get(b.slug) ?? 1000;
+      const ra = ratingMap.get(a.slug) ?? 1000;
+      return rb - ra || (b.score - a.score);
+    });
   }
 
   return (
@@ -47,15 +59,15 @@ export default async function RankingPage({ searchParams }: { searchParams?: Pro
             <div className="w-10 text-center font-bold">{idx + 1}</div>
             <Image src={f.avatar} alt={f.name} width={48} height={48} className="rounded border" />
             <div className="flex-1">
-              <Link href={`/founder/${f.slug}`} className="text-[#00a0a0] font-bold hover:underline">
+              <Link href={`/founder/${encodeURIComponent(f.slug)}`} className="text-[#00a0a0] font-bold hover:underline">
                 {f.name}
               </Link>
             </div>
             <div className="flex items-center gap-3 w-56 justify-end">
-              <div className="text-right font-bold min-w-[48px]">{f.score}</div>
-              <Link href={`/founder/${f.slug}`} className="flex flex-col items-center gap-1 min-w-[80px] hover:underline" aria-label={`View ${f.name} bio`}>
-                <Image src={f.project.logo} alt={`${f.project.name} logo`} width={24} height={24} />
-                <span className="text-xs text-center">{f.project.name}</span>
+              <div className="text-right font-bold min-w-[48px]">{ratingMap.get(f.slug) ?? 1000}</div>
+              <Link href={`/founder/${encodeURIComponent(f.slug)}`} className="flex flex-col items-center gap-1 w-[80px] hover:underline" aria-label={`View ${f.name} bio`}>
+                <Image src={f.project.logo} alt={`${f.project.name} logo`} width={32} height={32} />
+                <span className="text-xs text-center leading-tight break-words hyphens-auto max-w-full overflow-hidden">{f.project.name}</span>
               </Link>
             </div>
           </div>

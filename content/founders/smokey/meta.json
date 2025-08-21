@@ -1,0 +1,22 @@
+{
+  "slug": "smokey",
+  "name": "Smokey",
+  "track": "L1/L2",
+  "summary": "Founder of Berachain",
+  "life": "Founded Berachain in 2021",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/SmokeyTheBera"
+    }
+  ],
+  "project": {
+    "name": "Berachain",
+    "description": "High-performance EVM-compatible blockchain built on Proof-of-Liquidity consensus.",
+    "fdv": "$1B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#69"
+  },
+  "score": 40
+}

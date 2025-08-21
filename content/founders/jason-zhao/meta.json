@@ -1,13 +1,26 @@
 {
   "slug": "jason-zhao",
   "name": "Jason Zhao",
-  "track": "AI",
-  "summary": "Co-founder at Example Co. Passionate about consumer AI.",
-  "life": "Graduated from Somewhere University. Worked at BigCo, then founded Example Co. Lives in San Francisco.",
+  "track": "L1/L2",
+  "summary": "Founder of Story",
+  "life": "Founded Story in 2021",
   "social": [
-    { "label": "Twitter", "url": "https://twitter.com" },
-    { "label": "LinkedIn", "url": "https://www.linkedin.com" }
+    {
+      "label": "Twitter",
+      "url": "https://x.com/jasonjzhao"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/jasonjinzhao/"
+    }
   ],
-  "project": { "name": "Story", "description": "Consumer social app focused on creative storytelling.", "fdv": "$120M", "url": "#", "logo": "" },
+  "project": {
+    "name": "Story",
+    "description": "Web3 protocol for creating, governing, and licensing on-chain IP through modular \"story legos.\"",
+    "fdv": "$5.6B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#125"
+  },
   "score": 92
 }

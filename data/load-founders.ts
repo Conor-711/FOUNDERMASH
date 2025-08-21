@@ -100,7 +100,7 @@ export function loadFounders(): Founder[] {
       ...f,
       avatar,
       avatars,
-      project: { ...f.project, logo: projectLogo(f.slug) },
+      project: { ...f.project, logo: projectLogo(f.slug), mindshare: (f as any).project?.mindshare },
     };
   });
   return computeRanks(withAssets);

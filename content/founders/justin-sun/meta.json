@@ -1,0 +1,22 @@
+{
+  "slug": "justin-sun",
+  "name": "Justin Sun",
+  "track": "L1/L2",
+  "summary": "Founder of Tron",
+  "life": "Founded Tron in 2017",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/justinsuntron"
+    }
+  ],
+  "project": {
+    "name": "Tron",
+    "description": "Blockchain platform powering decentralized content and dApps.",
+    "fdv": "$33.3B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#78"
+  },
+  "score": 60
+}

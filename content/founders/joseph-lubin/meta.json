@@ -1,0 +1,26 @@
+{
+  "slug": "joseph-lubin",
+  "name": "Joseph Lubin",
+  "track": "OTHER",
+  "summary": "Founder of ConsenSys",
+  "life": "Founded ConsenSys in 2014",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/ethereumjoseph"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/joseph-lubin-48406489/"
+    }
+  ],
+  "project": {
+    "name": "ConsenSys",
+    "description": "Ethereum-focused software company enabling development of applications, financial infrastructure, and decentralized web access.",
+    "fdv": "N/A",
+    "url": "https://consensys.net/",
+    "logo": "/images/projects/josephlubin.png",
+    "mindshare": "#231"
+  },
+  "score": 40
+}

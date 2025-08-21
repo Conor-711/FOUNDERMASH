@@ -4,11 +4,13 @@ import AvatarCarousel from '@/components/AvatarCarousel';
 import { loadFounders } from '@/data/load-founders';
 
 export async function generateStaticParams() {
-  return loadFounders().map((f) => ({ slug: f.slug }));
+  return loadFounders().map((f) => ({ slug: encodeURIComponent(f.slug) }));
 }
 
 export default async function FounderPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+  const { slug: rawSlug } = await params;
+  // URL decode the slug to handle special characters like ü
+  const slug = decodeURIComponent(rawSlug);
   const all = loadFounders();
   const founder = all.find((f) => f.slug === slug) ?? all[0];
   return (
@@ -38,7 +40,7 @@ export default async function FounderPage({ params }: { params: Promise<{ slug: 
 
 
       <section className="mt-6">
-        <h3 className="uppercase text-sm font-bold mb-3 tracking-wide">Life & Work</h3>
+        <h3 className="uppercase text-sm font-bold mb-3 tracking-wide">Work</h3>
         <div>{founder.life}</div>
       </section>
 
@@ -70,7 +72,31 @@ export default async function FounderPage({ params }: { params: Promise<{ slug: 
             )}
             <div className="text-sm text-[#555] mt-1">{founder.project.description}</div>
           </div>
-          <div className="text-right font-bold">FDV: {founder.project.fdv}</div>
+          <div className="text-right font-bold min-w-[120px]">
+            {founder.project.fdv && (
+              <div>FDV: {founder.project.fdv}</div>
+            )}
+            {founder.project.mindshare && (
+              <div>Mindshare: {founder.project.mindshare}</div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-6">
+        <div className="flex items-center justify-between mb-3">
+          <h3 className="uppercase text-sm font-bold tracking-wide">Story</h3>
+          <Link 
+            href="/submit" 
+            className="bg-[#0b88b6] text-white px-3 py-1 rounded text-xs font-bold hover:bg-[#096d8a] transition-colors"
+          >
+            SUBMIT
+          </Link>
+        </div>
+        <div className="border rounded p-4 bg-gray-50">
+          <p className="text-sm text-gray-600 italic">
+            Share your founder story or submit updates about this founder.
+          </p>
         </div>
       </section>
     </div>

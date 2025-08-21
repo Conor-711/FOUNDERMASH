@@ -1,0 +1,26 @@
+{
+  "slug": "keone-hon",
+  "name": "Keone Hon",
+  "track": "L1/L2",
+  "summary": "Founder of Mona",
+  "life": "Founded Monad in 2022",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/keoneHD"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/keone-hon/"
+    }
+  ],
+  "project": {
+    "name": "Monad",
+    "description": "Ultra-fast EVM-compatible layer-1 blockchain enhancing scalability and throughput.",
+    "fdv": "N/A",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#24"
+  },
+  "score": 70
+}

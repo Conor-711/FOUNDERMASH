@@ -1,0 +1,26 @@
+{
+  "slug": "pacman",
+  "name": "Pacman",
+  "track": "L1/L2",
+  "summary": "Founder of Blast",
+  "life": "Founded Blast in 2023",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/PacmanBlur"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/tieshun-roquerre-06181659/"
+    }
+  ],
+  "project": {
+    "name": "Blast",
+    "description": "Ethereum-compatible optimistic rollup Layer-2 enabling yield generation from ETH and stablecoins.",
+    "fdv": "$0.26B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "N/A"
+  },
+  "score": 40
+}

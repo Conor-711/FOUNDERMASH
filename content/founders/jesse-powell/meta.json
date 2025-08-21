@@ -1,0 +1,26 @@
+{
+  "slug": "jesse-powell",
+  "name": "Jesse Powell",
+  "track": "EXCHANGE",
+  "summary": "Founder of Kraken",
+  "life": "Founded Kraken in 2011",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/jespow"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/jessepowell/"
+    }
+  ],
+  "project": {
+    "name": "Kraken",
+    "description": "Crypto exchange offering secure trading, staking, and advanced financial services.",
+    "fdv": "N/A",
+    "url": "#",
+    "logo": "",
+    "mindshare": "N/A"
+  },
+  "score": 40
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "mable-jiang",
+  "name": "Mable Jiang",
+  "track": "OTHER",
+  "summary": "Founder of Trends",
+  "life": "Founded Trends in 2023",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/Mable_Jiang"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/mable-jiang/"
+    }
+  ],
+  "project": {
+    "name": "Trends",
+    "description": "Solana-based protocol for tokenizing and trading tweets, with features for social reputation and rankings.",
+    "fdv": "N/A",
+    "url": "#",
+    "logo": "",
+    "mindshare": "N/A"
+  },
+  "score": 40
+}

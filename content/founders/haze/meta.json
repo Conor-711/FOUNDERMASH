@@ -1,0 +1,22 @@
+{
+  "slug": "haze",
+  "name": "Haze",
+  "track": "EXCHANGE",
+  "summary": "Founder of GMGN",
+  "life": "Founded GMGN in 2023",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/haze0x"
+    }
+  ],
+  "project": {
+    "name": "GMGN",
+    "description": "Meme token tracking and analysis platform providing trading signals from smart money and token flows.",
+    "fdv": "N/A",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#714"
+  },
+  "score": 40
+}

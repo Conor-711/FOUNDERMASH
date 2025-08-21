@@ -1,7 +1,7 @@
-export type Track = "ALL" | "DEFI" | "EXCHANGE" | "L1/L2" | "AI" | "NFT" | "STABLECOIN" | "OTHER";
+export type Track = "ALL" | "DEFI" | "EXCHANGE" | "L1/L2" | "OTHER";
 
 export type Social = { label: string; url: string };
-export type Project = { logo: string; name: string; description: string; fdv: string; url?: string };
+export type Project = { logo: string; name: string; description: string; fdv: string; mindshare?: string; url?: string };
 export type Rank = { all: number; track: Track; trackRank: number };
 
 export type Founder = {

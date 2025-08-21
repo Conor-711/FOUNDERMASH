@@ -22,7 +22,45 @@ model Matchup {
 // Elo rating for ALL category (global)
 model Elo {
   slug   String @id
-  rating Int    @default(0)
+  rating Int    @default(1000)
 }
 
+// Elo rating per track/category
+model EloTrack {
+  slug   String
+  track  String
+  rating Int    @default(1000)
+
+  @@id([slug, track])
+  @@index([track])
+}
+
+// Founder story submissions
+model Submission {
+  id        Int      @id @default(autoincrement())
+  founder   String   // Founder's name
+  nickname  String   // Founder's nickname
+  email     String?  // Optional submitter email
+  story     String   // The story content
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@map("submissions")
+}
+
+// User vote history for profile statistics
+model UserVote {
+  id         Int      @id @default(autoincrement())
+  sessionId  String   // Browser session ID
+  aSlug      String   // First founder in comparison
+  bSlug      String   // Second founder in comparison  
+  winner     String   // Which founder was chosen
+  track      String   // Which track/category
+  percentage Int      // What percentage chose the same founder at time of vote
+  createdAt  DateTime @default(now())
+  
+  @@index([sessionId])
+  @@index([winner])
+  @@map("user_votes")
+}
 

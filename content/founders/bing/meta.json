@@ -1,0 +1,26 @@
+{
+  "slug": "bing",
+  "name": "Bing",
+  "track": "L1/L2",
+  "summary": "Founder of MegaET",
+  "life": "Founded MegaETH in 2023",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/hotpot_dao"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/shuyao-kong/"
+    }
+  ],
+  "project": {
+    "name": "MegaETH",
+    "description": "Ultra high-throughput, low-latency EVM-compatible Layer-2 for Ethereum scalability.",
+    "fdv": "N/A",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#79"
+  },
+  "score": 75
+}
