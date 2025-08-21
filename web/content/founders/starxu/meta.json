@@ -1,0 +1,22 @@
+{
+  "slug": "starxu",
+  "name": "Star Xu",
+  "track": "EXCHANGE",
+  "summary": "Founder of OKX",
+  "life": "Founded OKX in 2013",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/star_okx"
+    }
+  ],
+  "project": {
+    "name": "OKX",
+    "description": "Crypto exchange offering trading and DeFi services.",
+    "fdv": "40B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#11"
+  },
+  "score": 86
+}

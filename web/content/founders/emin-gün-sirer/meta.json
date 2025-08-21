@@ -1,0 +1,26 @@
+{
+  "slug": "emin-gün-sirer",
+  "name": "Emin Gün Sirer",
+  "track": "L1/L2",
+  "summary": "Founder of Avalanche",
+  "life": "Founded Avalanche in 2018",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/el33th4xor/"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/emin-gun-sirer-0a921a4/"
+    }
+  ],
+  "project": {
+    "name": "Avalanche",
+    "description": "Platform for creating custom blockchains and dApps with high scalability and subnet infrastructure.",
+    "fdv": "$16.5B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#10"
+  },
+  "score": 40
+}

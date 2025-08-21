@@ -1,0 +1,26 @@
+{
+  "slug": "toly",
+  "name": "Toly",
+  "track": "L1/L2",
+  "summary": "Founder of Solana",
+  "life": "Founded Solana in 2020",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/aeyakovenko"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/anatoly-yakovenko/"
+    }
+  ],
+  "project": {
+    "name": "Solana",
+    "description": "High-performance blockchain platform for scalable dApps and smart contracts.",
+    "fdv": "$110B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#3"
+  },
+  "score": 50
+}

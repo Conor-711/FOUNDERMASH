@@ -1,0 +1,26 @@
+{
+  "slug": "terence-kwok",
+  "name": "Terence Kwok",
+  "track": "L1/L2",
+  "summary": "Founder of Humanity Protocol",
+  "life": "Founded Humanity Protocol in 2023",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/TK_Humanity"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/terence-kwok-9b260b53/"
+    }
+  ],
+  "project": {
+    "name": "Humanity Protocol",
+    "description": "Sybil-resistance blockchain network providing human authentication and identity ownership with palm recognition.",
+    "fdv": "$0.3B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#227"
+  },
+  "score": 40
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "james-chi",
+  "name": "James Chi",
+  "track": "L1/L2",
+  "summary": "Founder of Pumpfun",
+  "life": "Founded Camp Network in 2022",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/jameskchi"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/jameschi94/"
+    }
+  ],
+  "project": {
+    "name": "Camp Network",
+    "description": "A L1 blockchain platform designed for AI-native applications and IP tokenization scenarios.",
+    "fdv": "N/A",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#44"
+  },
+  "score": 40
+}

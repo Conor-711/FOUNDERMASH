@@ -1,0 +1,26 @@
+{
+  "slug": "bryan-pellegrino",
+  "name": "Bryan Pellegrino",
+  "track": "OTHER",
+  "summary": "Founder of LayerZero",
+  "life": "Founded LayerZero in 2021.",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/PrimordialAA"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/bryanpellegrino/"
+    }
+  ],
+  "project": {
+    "name": "LayerZero",
+    "description": "Blockchain protocol enabling decentralized cross‑chain message passing across multiple blockchains.",
+    "fdv": "$1.9B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#91"
+  },
+  "score": 40
+}

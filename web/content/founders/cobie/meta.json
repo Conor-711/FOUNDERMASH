@@ -1,0 +1,22 @@
+{
+  "slug": "cobie",
+  "name": "Cobie",
+  "track": "OTHER",
+  "summary": "Founder of Echo",
+  "life": "Founded Echo in 2024",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/cobie"
+    }
+  ],
+  "project": {
+    "name": "Echo",
+    "description": "Crypto angel investor platform enabling collective investments in crypto projects.",
+    "fdv": "N/A",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#579"
+  },
+  "score": 40
+}

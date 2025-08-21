@@ -1,0 +1,26 @@
+{
+  "slug": "dan-romero",
+  "name": "Dan Romero",
+  "track": "L1/L2",
+  "summary": "Founder of Farcaster",
+  "life": "Founded Farcaster in 2020",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/dwr"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/danielwromero/"
+    }
+  ],
+  "project": {
+    "name": "Farcaster",
+    "description": "Decentralized social networking protocol.",
+    "fdv": "N/A",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#104"
+  },
+  "score": 40
+}

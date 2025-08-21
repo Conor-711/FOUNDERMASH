@@ -1,0 +1,26 @@
+{
+  "slug": "ming-wu",
+  "name": "Ming Wu",
+  "track": "L1/L2",
+  "summary": "Founder of 0G Labs",
+  "life": "Founded 0G Labs in 2023",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/spark_ren"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/ming-wu-7a598b1b/"
+    }
+  ],
+  "project": {
+    "name": "0G Labs",
+    "description": "Decentralized AI operating system managing resources and enabling scalable AI applications and chains.",
+    "fdv": "N/A",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#88"
+  },
+  "score": 40
+}

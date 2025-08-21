@@ -1,0 +1,26 @@
+{
+  "slug": "tn-lee",
+  "name": "TN Lee",
+  "track": "DEFI",
+  "summary": "Founder of Pendle",
+  "life": "Founded Pendle in 2021",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/tn_pendle"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/tnlee/"
+    }
+  ],
+  "project": {
+    "name": "Pendle",
+    "description": "Yield trading protocol that tokenizes and trades future yields from yield-bearing assets.",
+    "fdv": "$1.5B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#33"
+  },
+  "score": 40
+}

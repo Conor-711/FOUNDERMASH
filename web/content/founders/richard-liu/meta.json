@@ -1,0 +1,26 @@
+{
+  "slug": "richard-liu",
+  "name": "Richard Liu",
+  "track": "OTHER",
+  "summary": "Founder of Huma",
+  "life": "Founded Huma in 2022",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/DrPayFi"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/drpayfi/"
+    }
+  ],
+  "project": {
+    "name": "Huma",
+    "description": "PayFi network enabling instant liquidity and financing for global payments.",
+    "fdv": "$0.3B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#53"
+  },
+  "score": 40
+}

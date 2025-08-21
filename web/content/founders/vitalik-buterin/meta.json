@@ -1,0 +1,22 @@
+{
+  "slug": "vitalik-buterin",
+  "name": "Vitalik Buterin",
+  "track": "L1/L2",
+  "summary": "Founder of Ethereum",
+  "life": "Founded Ethereum in 2015",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/vitalikbuterin"
+    }
+  ],
+  "project": {
+    "name": "Ethereum",
+    "description": "Blockchain platform enabling programmable smart contracts and decentralized applications.",
+    "fdv": "$520B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#2"
+  },
+  "score": 55
+}

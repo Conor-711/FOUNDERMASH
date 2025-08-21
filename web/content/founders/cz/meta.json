@@ -1,0 +1,22 @@
+{
+  "slug": "cz",
+  "name": "CZ",
+  "track": "EXCHANGE",
+  "summary": "Founder of Binance",
+  "life": "Founded Binance in 2017",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/cz_binance"
+    }
+  ],
+  "project": {
+    "name": "Binance",
+    "description": "Global crypto exchange with a broad trading ecosystem.",
+    "fdv": "116B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#10"
+  },
+  "score": 88
+}

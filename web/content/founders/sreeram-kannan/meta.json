@@ -1,0 +1,26 @@
+{
+  "slug": "sreeram-kannan",
+  "name": "Sreeram Kannan",
+  "track": "DEFI",
+  "summary": "Founder of Eigenlayer",
+  "life": "Founded Eigenlayer in 2021",
+  "social": [
+    {
+      "label": "Twitter",
+      "url": "https://x.com/sreeramkannan"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/sreeram-kannan-a397a47/"
+    }
+  ],
+  "project": {
+    "name": "Eigenlayer",
+    "description": "The restaking platform enables multiple uses of ethereum staked assets to provide security support for multiple services.",
+    "fdv": "$2.3B",
+    "url": "#",
+    "logo": "",
+    "mindshare": "#140"
+  },
+  "score": 40
+}
