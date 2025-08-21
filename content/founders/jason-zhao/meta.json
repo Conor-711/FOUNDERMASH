@@ -1,0 +1,13 @@
+{
+  "slug": "jason-zhao",
+  "name": "Jason Zhao",
+  "track": "AI",
+  "summary": "Co-founder at Example Co. Passionate about consumer AI.",
+  "life": "Graduated from Somewhere University. Worked at BigCo, then founded Example Co. Lives in San Francisco.",
+  "social": [
+    { "label": "Twitter", "url": "https://twitter.com" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com" }
+  ],
+  "project": { "name": "Story", "description": "Consumer social app focused on creative storytelling.", "fdv": "$120M", "url": "#", "logo": "" },
+  "score": 92
+}

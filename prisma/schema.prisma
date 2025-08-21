@@ -1,0 +1,28 @@
+// SQLite database for local development
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Matchup {
+  // pairKey is sorted 'a|b'
+  pairKey String  @id
+  aSlug   String
+  bSlug   String
+  votesA  Int     @default(0)
+  votesB  Int     @default(0)
+
+  @@index([aSlug, bSlug])
+}
+
+// Elo rating for ALL category (global)
+model Elo {
+  slug   String @id
+  rating Int    @default(0)
+}
+
+
