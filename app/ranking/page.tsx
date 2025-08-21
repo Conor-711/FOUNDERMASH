@@ -15,22 +15,29 @@ export default async function RankingPage({ searchParams }: { searchParams?: Pro
   const isAll = active === 'ALL';
   const sorted = [...filtered];
   let ratingMap = new Map<string, number>();
-  if (isAll) {
-    const elos = (await prisma.elo.findMany()) as { slug: string; rating: number }[];
-    ratingMap = new Map(elos.map((e) => [e.slug, e.rating] as const));
-    sorted.sort((a, b) => {
-      const rb = ratingMap.get(b.slug) ?? 1000;
-      const ra = ratingMap.get(a.slug) ?? 1000;
-      return rb - ra || (b.score - a.score);
-    });
-  } else {
-    const elosT = (await prisma.eloTrack.findMany({ where: { track: active } })) as { slug: string; track: string; rating: number }[];
-    ratingMap = new Map(elosT.map((e) => [e.slug, e.rating] as const));
-    sorted.sort((a, b) => {
-      const rb = ratingMap.get(b.slug) ?? 1000;
-      const ra = ratingMap.get(a.slug) ?? 1000;
-      return rb - ra || (b.score - a.score);
-    });
+  
+  try {
+    if (isAll) {
+      const elos = (await prisma.elo.findMany()) as { slug: string; rating: number }[];
+      ratingMap = new Map(elos.map((e) => [e.slug, e.rating] as const));
+      sorted.sort((a, b) => {
+        const rb = ratingMap.get(b.slug) ?? 1000;
+        const ra = ratingMap.get(a.slug) ?? 1000;
+        return rb - ra || (b.score - a.score);
+      });
+    } else {
+      const elosT = (await prisma.eloTrack.findMany({ where: { track: active } })) as { slug: string; track: string; rating: number }[];
+      ratingMap = new Map(elosT.map((e) => [e.slug, e.rating] as const));
+      sorted.sort((a, b) => {
+        const rb = ratingMap.get(b.slug) ?? 1000;
+        const ra = ratingMap.get(a.slug) ?? 1000;
+        return rb - ra || (b.score - a.score);
+      });
+    }
+  } catch (error) {
+    console.error('Database error in ranking page:', error);
+    // Fallback to static score sorting if database fails
+    sorted.sort((a, b) => b.score - a.score);
   }
 
   return (
