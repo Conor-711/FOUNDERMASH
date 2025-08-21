@@ -5,76 +5,66 @@ export default function AboutPage() {
     <div className="mx-auto max-w-[800px] px-4">
       <Link href="/" className="text-[#0b88b6] font-bold">← Back to Choose</Link>
       
-      <div className="mt-6">
-        <h1 className="text-3xl font-extrabold mb-8">About FOUNDERMASH</h1>
+      <div className="mt-6 text-center">
+        <h1 className="text-3xl font-extrabold mb-8">ABOUT</h1>
 
-        <div className="space-y-6">
-          {/* IDEA Section */}
-          <section className="border rounded p-6">
-            <h2 className="uppercase text-sm font-bold mb-3 tracking-wide">Idea</h2>
-            <div className="text-gray-700 leading-relaxed space-y-4">
-              <p>
-                FOUNDERMASH is inspired by the legendary Harvard project that asked the simple question: 
-                &ldquo;Who&rsquo;s hotter?&rdquo; But instead of judging looks, we&rsquo;re asking: &ldquo;Who&rsquo;s the more influential crypto founder?&rdquo;
+        <div className="mb-8">
+          <p className="text-xl italic text-gray-800 mb-8">
+            &quot;Were we let in for being based? No. Will we be judged on it? Yes.&quot;
+          </p>
+        </div>
+
+        <div className="space-y-4 text-center">
+          {/* ABOUT FACEMASH Section */}
+          <section className="rounded p-4">
+            <h2 className="uppercase text-sm font-bold mb-3 tracking-wide">About Facemash</h2>
+            <div className="mb-4">
+              <p className="text-lg text-gray-700 mb-3">
+                FounderMash is a fun experiment.
               </p>
-              <p>
-                In the fast-moving world of blockchain and cryptocurrency, founders shape entire ecosystems. 
-                They build the protocols we use, create the tokens we trade, and envision the decentralized future we&rsquo;re building toward.
+              
+              <p className="text-base text-gray-700 mb-2">
+              <strong>Two crypto founders&apos; photos are shown side by side. Click on the one you find more based</strong>.
               </p>
-              <p>
-                This platform lets the community decide who truly stands out in the crypto space. 
-                Every click is a vote. Every choice reveals something about what we value as a community.
-                Your preferences help create a dynamic ranking of the most respected builders in Web3.
-              </p>
-              <p>
-                It&rsquo;s not just about popularity&mdash;it&rsquo;s about recognizing the founders who are pushing boundaries, 
-                solving real problems, and building the infrastructure for a decentralized world.
+              <p className="text-base text-gray-700 mb-3">
+              <strong>Each choice updates the ranking using the Elo rating system</strong>.
               </p>
             </div>
           </section>
 
-          {/* HISTORY Section */}
-          <section className="border rounded p-6">
-            <h2 className="uppercase text-sm font-bold mb-3 tracking-wide">History</h2>
-            <div className="text-gray-700 leading-relaxed space-y-4">
-              <p>
-                The original concept traces back to 2003 when Harvard student Mark Zuckerberg created &ldquo;Facemash&rdquo; 
-                as a way to compare the attractiveness of fellow students. Though controversial, it demonstrated 
-                the addictive nature of comparative ranking systems.
+          {/* ABOUT REASON Section */}
+          <section className="rounded">
+            <h2 className="uppercase text-sm font-bold mb-3 tracking-wide">About Reason</h2>
+            <div className="mb-4">
+              <p className="text-base text-gray-700 mb-2">
+              As a fresh entrant this cycle, I really appreciate what founders have contributed to the industry.
               </p>
-              <p>
-                FOUNDERMASH adapts this concept for the cryptocurrency and blockchain space, where innovation 
-                moves at lightning speed and new influential figures emerge constantly. Instead of superficial 
-                comparisons, we focus on the impact, vision, and contributions of crypto founders.
+              <p className="text-base text-gray-700 mb-2">
+              Whether they stick around or not.
               </p>
-              <p>
-                Launched in 2024, FOUNDERMASH has become a community-driven platform where crypto enthusiasts, 
-                investors, and builders come together to celebrate the founders who are shaping our industry.
-                Each comparison helps build a collective understanding of who&rsquo;s truly making a difference.
+              <p className="text-base text-gray-700 mb-3">
+              So I built this website, inspired by <strong>Facemash</strong> — the predecessor of Facebook.
               </p>
-              <p>
-                From DeFi pioneers to Layer 1 architects, from exchange builders to NFT innovators—every founder 
-                featured here has contributed something significant to the crypto ecosystem. The rankings reflect 
-                not just current popularity, but sustained impact and community respect.
+              <p className="text-base text-gray-700 mb-3">
+              Have fun!
               </p>
-              <p>
-                As the platform grows, so does our understanding of what makes a truly influential crypto founder. 
-                Join us in mapping the landscape of blockchain leadership, one comparison at a time.
-              </p>
+            </div>
+          </section>
+          <section className="rounded p-2">
+            <div className="mb-4">
+              <img 
+                src="/zuck.png" 
+                alt="Zuckerberg" 
+                className="mx-auto max-w-full h-auto rounded"
+              />
             </div>
           </section>
 
-          {/* Attribution */}
-          <section className="border rounded p-6 bg-gray-50">
-            <div className="text-center text-sm text-gray-600">
-              <p>
-                Thanks to <a href="https://www.thecrimson.com/article/2003/11/4/hot-or-not-website-briefly-judges/" target="_blank" rel="noopener noreferrer" className="text-[#0b88b6] underline font-bold">Mark Zuckerberg</a> for the original inspiration.
-              </p>
-              <p className="mt-2">
-                Built for the crypto community, by the crypto community.
-              </p>
-            </div>
-          </section>
+          <div className="mt-4 pt-4 border-t border-gray-200">
+            <p className="text-sm text-gray-600">
+              Created by <a href="https://x.com/Conor_711" target="_blank" rel="noopener noreferrer" className="text-[#0b88b6] font-bold hover:underline">Conor</a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
