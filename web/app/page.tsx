@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import Link from "next/link";
 import { loadFounders } from "@/data/load-founders";
 import Matchup from "@/components/Matchup";

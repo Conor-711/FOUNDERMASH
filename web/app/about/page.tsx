@@ -15,11 +15,11 @@ export default function AboutPage() {
             <div className="text-gray-700 leading-relaxed space-y-4">
               <p>
                 FOUNDERMASH is inspired by the legendary Harvard project that asked the simple question: 
-                "Who's hotter?" But instead of judging looks, we're asking: "Who's the more influential crypto founder?"
+                &ldquo;Who&rsquo;s hotter?&rdquo; But instead of judging looks, we&rsquo;re asking: &ldquo;Who&rsquo;s the more influential crypto founder?&rdquo;
               </p>
               <p>
                 In the fast-moving world of blockchain and cryptocurrency, founders shape entire ecosystems. 
-                They build the protocols we use, create the tokens we trade, and envision the decentralized future we're building toward.
+                They build the protocols we use, create the tokens we trade, and envision the decentralized future we&rsquo;re building toward.
               </p>
               <p>
                 This platform lets the community decide who truly stands out in the crypto space. 
@@ -27,7 +27,7 @@ export default function AboutPage() {
                 Your preferences help create a dynamic ranking of the most respected builders in Web3.
               </p>
               <p>
-                It's not just about popularity—it's about recognizing the founders who are pushing boundaries, 
+                It&rsquo;s not just about popularity&mdash;it&rsquo;s about recognizing the founders who are pushing boundaries, 
                 solving real problems, and building the infrastructure for a decentralized world.
               </p>
             </div>
@@ -38,7 +38,7 @@ export default function AboutPage() {
             <h2 className="uppercase text-sm font-bold mb-3 tracking-wide">History</h2>
             <div className="text-gray-700 leading-relaxed space-y-4">
               <p>
-                The original concept traces back to 2003 when Harvard student Mark Zuckerberg created "Facemash" 
+                The original concept traces back to 2003 when Harvard student Mark Zuckerberg created &ldquo;Facemash&rdquo; 
                 as a way to compare the attractiveness of fellow students. Though controversial, it demonstrated 
                 the addictive nature of comparative ranking systems.
               </p>
@@ -50,7 +50,7 @@ export default function AboutPage() {
               <p>
                 Launched in 2024, FOUNDERMASH has become a community-driven platform where crypto enthusiasts, 
                 investors, and builders come together to celebrate the founders who are shaping our industry.
-                Each comparison helps build a collective understanding of who's truly making a difference.
+                Each comparison helps build a collective understanding of who&rsquo;s truly making a difference.
               </p>
               <p>
                 From DeFi pioneers to Layer 1 architects, from exchange builders to NFT innovators—every founder 

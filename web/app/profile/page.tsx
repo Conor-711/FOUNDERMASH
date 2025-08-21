@@ -62,7 +62,7 @@ export default function ProfilePage() {
         } else {
           setError(data.error || 'Failed to load profile');
         }
-      } catch (err) {
+      } catch {
         setError('Network error');
       } finally {
         setLoading(false);
@@ -107,7 +107,7 @@ export default function ProfilePage() {
         <div className="mt-6">
           <h1 className="text-3xl font-extrabold mb-8">Your Profile</h1>
           <div className="text-center py-12">
-            <div className="text-gray-600 mb-4">You haven't made any choices yet!</div>
+            <div className="text-gray-600 mb-4">You haven&rsquo;t made any choices yet!</div>
             <Link href="/" className="text-[#0b88b6] font-bold hover:underline">
               Start comparing founders →
             </Link>
@@ -124,7 +124,7 @@ export default function ProfilePage() {
       <div className="mt-6">
         <h1 className="text-3xl font-extrabold mb-2">Your Profile</h1>
         <p className="text-gray-600 mb-8">
-          Based on {stats.totalVotes} choice{stats.totalVotes !== 1 ? 's' : ''} you've made
+          Based on {stats.totalVotes} choice{stats.totalVotes !== 1 ? 's' : ''} you&rsquo;ve made
         </p>
 
         <div className="space-y-6">

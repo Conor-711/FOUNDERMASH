@@ -73,7 +73,7 @@ export default function Matchup({ founders, track }: { founders: Founder[]; trac
         ? `${cnt} people (${pct}%) chose the same as you`
         : `${pct}% chose ${winner.name}`;
       setBubble({ side: winnerIdx === 0 ? 'left' : 'right', text: msg });
-    } catch (e) {
+    } catch {
       setBubble({ side: winnerIdx === 0 ? 'left' : 'right', text: `Recorded your choice` });
     }
     setTimeout(() => {
@@ -82,11 +82,11 @@ export default function Matchup({ founders, track }: { founders: Founder[]; trac
       setPair((prev) => getTwoDistinctIndices(pool.length, prev));
       setBusy(false);
     }, 1200);
-  }, [busy, pool, pair]);
+  }, [busy, pool, pair, track]);
 
   // 客户端挂载后再随机化，避免 Hydration mismatch
   useEffect(() => {
-    const key = pool.map(p => p.slug).join('|');
+
     setPair(getTwoDistinctIndices(pool.length));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pool.length]);
@@ -96,7 +96,7 @@ export default function Matchup({ founders, track }: { founders: Founder[]; trac
   }
 
   // 保障索引在范围内，避免边界情况下 undefined
-  let i0 = Math.min(Math.max(pair[0] ?? 0, 0), pool.length - 1);
+  const i0 = Math.min(Math.max(pair[0] ?? 0, 0), pool.length - 1);
   let i1 = Math.min(Math.max(pair[1] ?? 1, 0), pool.length - 1);
   if (i0 === i1) i1 = (i0 + 1) % pool.length;
   const left = pool[i0];

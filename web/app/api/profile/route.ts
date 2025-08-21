@@ -105,7 +105,7 @@ export async function GET(req: NextRequest) {
       let sameChoiceCount = 0;
       let totalSessionsWithVotes = 0;
       
-      for (const [session, choices] of sessionStats) {
+      for (const [, choices] of sessionStats) {
         if (choices.size > 0) {
           totalSessionsWithVotes++;
           let sessionMostSelected = '';
@@ -168,7 +168,7 @@ export async function GET(req: NextRequest) {
       let sameIgnoreCount = 0;
       let totalSessionsWithIgnores = 0;
       
-      for (const [session, stats] of sessionIgnoreStats) {
+      for (const [, stats] of sessionIgnoreStats) {
         let sessionMostIgnored = '';
         let maxIgnoreRatio = 0;
         
