@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import AvatarCarousel from '@/components/AvatarCarousel';
 import { loadFounders } from '@/data/load-founders';
+import { prisma } from '@/lib/db';
 
 export async function generateStaticParams() {
   return loadFounders().map((f) => ({ slug: encodeURIComponent(f.slug) }));
@@ -13,6 +14,32 @@ export default async function FounderPage({ params }: { params: Promise<{ slug: 
   const slug = decodeURIComponent(rawSlug);
   const all = loadFounders();
   const founder = all.find((f) => f.slug === slug) ?? all[0];
+  
+  // Calculate real-time rankings based on ELO ratings
+  let allRank = founder.rank.all; // fallback to static rank
+  let trackRank = founder.rank.trackRank; // fallback to static rank
+  
+  try {
+    // Get ALL ranking based on ELO
+    const allElos = await prisma.elo.findMany({ orderBy: { rating: 'desc' } });
+    const allRankIndex = allElos.findIndex(e => e.slug === founder.slug);
+    if (allRankIndex !== -1) {
+      allRank = allRankIndex + 1;
+    }
+    
+    // Get track ranking based on EloTrack
+    const trackElos = await prisma.eloTrack.findMany({ 
+      where: { track: founder.rank.track },
+      orderBy: { rating: 'desc' }
+    });
+    const trackRankIndex = trackElos.findIndex(e => e.slug === founder.slug);
+    if (trackRankIndex !== -1) {
+      trackRank = trackRankIndex + 1;
+    }
+  } catch (error) {
+    console.error('Database error in founder page:', error);
+    // Use static ranks as fallback
+  }
   return (
     <div className="mx-auto max-w-[960px]">
       <Link href="/" className="text-[#0b88b6] font-bold">← Back to Choose</Link>
@@ -29,11 +56,11 @@ export default async function FounderPage({ params }: { params: Promise<{ slug: 
         <div className="flex gap-4">
           <div className="flex items-center gap-2 border rounded px-3 py-2">
             <span className="text-xs font-bold bg-gray-100 rounded px-2 py-1">ALL</span>
-            <span className="text-lg font-extrabold">{founder.rank.all}</span>
+            <span className="text-lg font-extrabold">{allRank}</span>
           </div>
           <div className="flex items-center gap-2 border rounded px-3 py-2">
             <span className="text-xs font-bold bg-gray-100 rounded px-2 py-1">{founder.rank.track}</span>
-            <span className="text-lg font-extrabold">{founder.rank.trackRank}</span>
+            <span className="text-lg font-extrabold">{trackRank}</span>
           </div>
         </div>
       </section>
