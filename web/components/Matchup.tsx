@@ -86,9 +86,17 @@ export default function Matchup({ founders, track }: { founders: Founder[]; trac
 
   // 客户端挂载后再随机化，避免 Hydration mismatch
   useEffect(() => {
-
-    setPair(getTwoDistinctIndices(pool.length));
-  }, [pool.length]);
+    // 找到Jason Zhao和Jeff的索引
+    const jasonIndex = pool.findIndex(f => f.slug === 'jason-zhao');
+    const jeffIndex = pool.findIndex(f => f.slug === 'jeff');
+    
+    // 如果两个人都在当前pool中，第一次显示他们，否则随机选择
+    if (jasonIndex !== -1 && jeffIndex !== -1) {
+      setPair([jasonIndex, jeffIndex]);
+    } else {
+      setPair(getTwoDistinctIndices(pool.length));
+    }
+  }, [pool.length, pool]);
 
   if (!Array.isArray(pool) || pool.length < 2) {
     return <div className="text-sm text-gray-500">Not enough founders to compare.</div>;
