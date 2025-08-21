@@ -95,7 +95,7 @@ export default async function FounderPage({ params }: { params: Promise<{ slug: 
         </div>
         <div className="border rounded p-4 bg-gray-50">
           <p className="text-sm text-gray-600 italic">
-            Share your founder story or submit updates about this founder.
+          Share any stories or thoughts on this founder.
           </p>
         </div>
       </section>

@@ -90,12 +90,12 @@ export default async function FounderPage({ params }: { params: Promise<{ slug: 
             href="/submit" 
             className="bg-[#0b88b6] text-white px-3 py-1 rounded text-xs font-bold hover:bg-[#096d8a] transition-colors"
           >
-            SUBMIT
+            SHARE
           </Link>
         </div>
         <div className="border rounded p-4 bg-gray-50">
           <p className="text-sm text-gray-600 italic">
-            Share your founder story or submit updates about this founder.
+          Share any stories or thoughts on this founder.
           </p>
         </div>
       </section>

@@ -12,8 +12,8 @@ export default async function Home({ searchParams }: { searchParams?: Promise<{ 
 
   return (
     <div className="text-center">
-      <p className="text-sm mb-4 text-[#111]">Were we let in for our looks? No. Will we be judged on them? Yes.</p>
-      <p className="text-[28px] font-extrabold mb-7">Who&apos;s Hotter? Click to Choose.</p>
+      <p className="text-xl font-bold mb-4 text-[#111]">Were we let in for being based? No. Will we be judged on it? Yes.</p>
+      <p className="text-[28px] font-extrabold mb-7">Who&apos;s more Based? Click to Choose.</p>
 
       <Matchup founders={filtered} track={active} />
 
@@ -35,9 +35,11 @@ export default async function Home({ searchParams }: { searchParams?: Promise<{ 
         <Link href="/profile" className="hover:underline">Profile</Link>
       </nav>
 
-      <p className="mt-12 text-lg font-bold text-gray-800">
-        Thanks <a href="https://www.thecrimson.com/article/2003/11/4/hot-or-not-website-briefly-judges/" target="_blank" rel="noopener noreferrer" className="text-[#0b88b6] underline">Mark Zuckerberg</a> for sharing the idea.
-      </p>
+      <div className="mt-25 bg-gray-50 p-4 rounded">
+        <p className="text-lg font-bold text-gray-800">
+          Thanks <a href="https://www.thecrimson.com/article/2003/11/4/hot-or-not-website-briefly-judges/" target="_blank" rel="noopener noreferrer" className="text-[#0b88b6] underline">Mark Zuckerberg</a> for sharing the idea.
+        </p>
+      </div>
     </div>
   );
 }
