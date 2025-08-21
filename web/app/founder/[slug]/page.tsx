@@ -90,7 +90,7 @@ export default async function FounderPage({ params }: { params: Promise<{ slug: 
             href="/submit" 
             className="bg-[#0b88b6] text-white px-3 py-1 rounded text-xs font-bold hover:bg-[#096d8a] transition-colors"
           >
-            SUBMIT
+            SHARE
           </Link>
         </div>
         <div className="border rounded p-4 bg-gray-50">

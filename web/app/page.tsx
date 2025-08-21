@@ -8,7 +8,7 @@ export default async function Home({ searchParams }: { searchParams?: Promise<{ 
   const active = (params.track || 'ALL').toUpperCase();
   const all = loadFounders();
   const filtered = active === 'ALL' ? all : all.filter(f => f.rank.track.toUpperCase() === active);
-  const categories = ['ALL','DEFI','EXCHANGE','L1/L2','OTHER'];
+  const categories = ['ALL','DEFI','L1/L2','EXCHANGE','OTHER'];
 
   return (
     <div className="text-center">
@@ -30,8 +30,8 @@ export default async function Home({ searchParams }: { searchParams?: Promise<{ 
       </nav>
       <nav className="flex justify-center gap-4 font-extrabold">
         <Link href="/about" className="hover:underline">About</Link>
-        <Link href="/submit" className="hover:underline">Submit</Link>
-        <Link href="/ranking" className="hover:underline">Rankings</Link>
+        <Link href="/submit" className="hover:underline">Share</Link>
+        <Link href="/ranking" className="hover:underline">Ranking</Link>
         <Link href="/profile" className="hover:underline">Profile</Link>
       </nav>
 
