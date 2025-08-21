@@ -1,0 +1,143 @@
+:root {
+  --crimson: #8f0000;
+  --crimson-border: #7a0000;
+  --teal: #00a0a0;
+  --text: #111111;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  background: #ffffff;
+}
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  background: #ffffff;
+}
+
+.masthead {
+  background: var(--crimson);
+  color: #ffffff;
+  text-align: center;
+  padding: 32px 12px;
+  border-bottom: 1px solid var(--crimson-border);
+}
+
+.masthead h1 {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 40px;
+}
+
+.content {
+  padding: 32px 24px 40px;
+  color: var(--text);
+  text-align: center;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.subline {
+  margin: 0 0 18px;
+  font-size: 14px;
+}
+
+.headline {
+  margin: 0 0 28px;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.matchup {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 80px;
+  margin-top: 16px;
+}
+
+.card {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card img {
+  width: 300px;
+  height: 380px;
+  object-fit: cover;
+  border: 1px solid #cccccc;
+  background: #f3f3f3;
+}
+
+.name {
+  margin-top: 10px;
+  color: var(--teal);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.or {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 700;
+  color: #333333;
+}
+
+/* Bottom links */
+.houses {
+  margin: 36px auto 8px;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.houses a {
+  color: #0b88b6;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.houses a:hover { text-decoration: underline; }
+
+.site-links {
+  margin: 6px auto 0;
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  color: #111111;
+}
+
+.site-links a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.site-links a:hover { text-decoration: underline; }
+
+@media (max-width: 760px) {
+  .page { margin: 0; max-width: none; border-left: 0; border-right: 0; }
+  .matchup { gap: 24px; }
+  .card img { width: 44vw; height: 56vw; }
+}
+
+
