@@ -119,7 +119,7 @@ export async function GET(req: NextRequest) {
       pageViews: {
         total: totalPageViews,
         unique: uniquePageViews.length,
-        byPage: pageViewsByPage.map(item => ({
+        byPage: pageViewsByPage.map((item: { page: string; _count: { page: number } }) => ({
           page: item.page,
           count: item._count.page,
         })),
@@ -128,21 +128,21 @@ export async function GET(req: NextRequest) {
       },
       clickEvents: {
         total: totalClicks,
-        byType: clicksByType.map(item => ({
+        byType: clicksByType.map((item: { eventType: string; _count: { eventType: number } }) => ({
           eventType: item.eventType,
           count: item._count.eventType,
         })),
-        byTarget: clicksByTarget.map(item => ({
+        byTarget: clicksByTarget.map((item: { target: string | null; _count: { target: number } }) => ({
           target: item.target || 'unknown',
           count: item._count.target,
         })),
         last24h: clicksLast24h,
       },
-      topFounders: topFounders.map(item => ({
+      topFounders: topFounders.map((item: { target: string | null; _count: { target: number } }) => ({
         founder: item.target || 'unknown',
         clicks: item._count.target,
       })),
-      topPages: pageViewsByPage.map(item => ({
+      topPages: pageViewsByPage.map((item: { page: string; _count: { page: number } }) => ({
         page: item.page,
         views: item._count.page,
       })),
