@@ -3,15 +3,7 @@
 import Link from "next/link";
 import Matchup from "@/components/Matchup";
 import { analytics } from '@/components/Analytics';
-
-interface Founder {
-  slug: string;
-  name: string;
-  avatar: string;
-  rank: {
-    track: string;
-  };
-}
+import { Founder } from '@/data/types';
 
 interface HomePageProps {
   filtered: Founder[];
