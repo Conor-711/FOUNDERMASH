@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { updateElo } from '@/lib/elo';
+import type { PrismaClient } from '@prisma/client';
 
 
 function pairKey(a: string, b: string): { key: string; aSlug: string; bSlug: string; winnerSide: 'A' | 'B' } {
@@ -21,7 +22,8 @@ export async function POST(req: NextRequest) {
     const winSorted = winner === aSlug ? 'A' : 'B';
 
     // 使用单个事务来执行所有数据库操作，提高性能
-    const result = await prisma.$transaction(async (tx) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const result = await prisma.$transaction(async (tx: any) => {
       // 1. 更新matchup记录
       const record = await tx.matchup.upsert({
         where: { pairKey: key },
