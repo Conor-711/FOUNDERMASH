@@ -9,8 +9,8 @@ restartPolicyType = "always"
 # Build command - use production schema for PostgreSQL
 buildCommand = "npm ci && cp prisma/schema.production.prisma prisma/schema.prisma && npx prisma generate && npm run build"
 
-# Start command
-startCommand = "npx prisma migrate deploy && npm start"
+# Start command - only run migrations if DATABASE_URL is available
+startCommand = "if [ -n \"$DATABASE_URL\" ]; then npx prisma migrate deploy; fi && npm start"
 
 # Environment variables will be set in Railway dashboard
 [env]
