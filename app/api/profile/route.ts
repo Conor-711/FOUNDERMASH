@@ -31,7 +31,7 @@ export async function GET(req: NextRequest) {
 
     // Calculate most selected founder
     const selectedCounts = new Map<string, number>();
-    userVotes.forEach(vote => {
+    userVotes.forEach((vote: any) => {
       const count = selectedCounts.get(vote.winner) || 0;
       selectedCounts.set(vote.winner, count + 1);
     });
@@ -49,7 +49,7 @@ export async function GET(req: NextRequest) {
     const appearedIn = new Map<string, number>();
     const chosenCounts = new Map<string, number>();
 
-    userVotes.forEach(vote => {
+    userVotes.forEach((vote: any) => {
       // Count appearances
       const aCount = appearedIn.get(vote.aSlug) || 0;
       const bCount = appearedIn.get(vote.bSlug) || 0;
@@ -75,7 +75,7 @@ export async function GET(req: NextRequest) {
     // Find the choice with the lowest percentage (most unpopular/unique choice)
     let leastPopularVote: { aSlug: string; bSlug: string; winner: string; percentage: number } | null = null;
     let lowestPercentage = 101; // Start higher than possible percentage
-    userVotes.forEach(vote => {
+    userVotes.forEach((vote: any) => {
       if (vote.percentage < lowestPercentage) {
         lowestPercentage = vote.percentage;
         leastPopularVote = vote as { aSlug: string; bSlug: string; winner: string; percentage: number };
@@ -93,7 +93,7 @@ export async function GET(req: NextRequest) {
       });
       
       const sessionStats = new Map<string, Map<string, number>>();
-      allUserSessions.forEach(vote => {
+      allUserSessions.forEach((vote: any) => {
         if (!sessionStats.has(vote.sessionId)) {
           sessionStats.set(vote.sessionId, new Map());
         }
@@ -144,14 +144,14 @@ export async function GET(req: NextRequest) {
       const allVotes = await prisma.userVote.findMany();
       const sessionIgnoreStats = new Map<string, Map<string, { appeared: number; chosen: number }>>();
       
-      allVotes.forEach(vote => {
+      allVotes.forEach((vote: any) => {
         if (!sessionIgnoreStats.has(vote.sessionId)) {
           sessionIgnoreStats.set(vote.sessionId, new Map());
         }
         const sessionMap = sessionIgnoreStats.get(vote.sessionId)!;
         
         // Track appearances for both founders in comparison
-        [vote.aSlug, vote.bSlug].forEach(slug => {
+        [vote.aSlug, vote.bSlug].forEach((slug: string) => {
           if (!sessionMap.has(slug)) {
             sessionMap.set(slug, { appeared: 0, chosen: 0 });
           }
