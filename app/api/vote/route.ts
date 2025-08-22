@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { updateElo } from '@/lib/elo';
-import type { PrismaClient } from '@prisma/client';
 
 
 function pairKey(a: string, b: string): { key: string; aSlug: string; bSlug: string; winnerSide: 'A' | 'B' } {

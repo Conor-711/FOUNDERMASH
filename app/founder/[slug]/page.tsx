@@ -22,7 +22,7 @@ export default async function FounderPage({ params }: { params: Promise<{ slug: 
   try {
     // Get ALL ranking based on ELO
     const allElos = await prisma.elo.findMany({ orderBy: { rating: 'desc' } });
-    const allRankIndex = allElos.findIndex(e => e.slug === founder.slug);
+    const allRankIndex = allElos.findIndex((e: { slug: string; rating: number }) => e.slug === founder.slug);
     if (allRankIndex !== -1) {
       allRank = allRankIndex + 1;
     }
@@ -32,7 +32,7 @@ export default async function FounderPage({ params }: { params: Promise<{ slug: 
       where: { track: founder.rank.track },
       orderBy: { rating: 'desc' }
     });
-    const trackRankIndex = trackElos.findIndex(e => e.slug === founder.slug);
+    const trackRankIndex = trackElos.findIndex((e: { slug: string; track: string; rating: number }) => e.slug === founder.slug);
     if (trackRankIndex !== -1) {
       trackRank = trackRankIndex + 1;
     }
