@@ -8,7 +8,7 @@ export default async function Home({ searchParams }: { searchParams?: Promise<{ 
   const active = (params.track || 'ALL').toUpperCase();
   const all = loadFounders();
   const filtered = active === 'ALL' ? all : all.filter(f => f.rank.track.toUpperCase() === active);
-  const categories = ['ALL','DEFI','L1/L2','EXCHANGE','OTHER'];
+  const categories = ['ALL','DEFI','L1/L2','EXCHANGE','OTHERS'];
 
   return (
     <div className="text-center">

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { loadFounders } from '@/data/load-founders';
 import { prisma } from '@/lib/db';
 
-const CATEGORIES = ['ALL','DEFI','L1/L2','EXCHANGE','OTHER'];
+const CATEGORIES = ['ALL','DEFI','L1/L2','EXCHANGE','OTHERS'];
 
 export default async function RankingPage({ searchParams }: { searchParams?: Promise<{ track?: string }> }) {
   const params = (await searchParams) || {};
