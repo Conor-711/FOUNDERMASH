@@ -14,6 +14,10 @@ try {
       db: {
         url: process.env.DATABASE_URL || 'file:./dev.db'
       }
+    },
+    // 优化数据库连接配置
+    transactionOptions: {
+      timeout: 5000, // 5秒超时
     }
   });
   

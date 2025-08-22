@@ -62,11 +62,23 @@ export default function Matchup({ founders, track }: { founders: Founder[]; trac
     }
 
     try {
+      // 设置请求超时
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 3000); // 3秒超时
+      
       const res = await fetch('/api/vote', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ a, b, winner: winner.slug, track, sessionId })
+        body: JSON.stringify({ a, b, winner: winner.slug, track, sessionId }),
+        signal: controller.signal
       });
+      
+      clearTimeout(timeoutId);
+      
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`);
+      }
+      
       const data = await res.json();
       const pct = typeof data.percent === 'number' ? data.percent : 50;
       const cnt = typeof data.count === 'number' ? data.count : undefined;
@@ -75,17 +87,31 @@ export default function Matchup({ founders, track }: { founders: Founder[]; trac
         : `${pct}% chose ${winner.name}`;
       setBubble({ side: winnerIdx === 0 ? 'left' : 'right', text: msg });
       
-      // Track founder selection
-      analytics.trackFounderSelect(winner.slug, track || 'ALL');
-    } catch {
+      // Track founder selection (异步，不阻塞UI)
+      analytics.trackFounderSelect(winner.slug, track || 'ALL').catch(() => {
+        // 忽略分析追踪错误
+      });
+      
+      // 成功情况下显示900ms统计信息，然后切换
+      setTimeout(() => {
+        setBubble(null);
+        setPressedButton(null);
+        setPair((prev) => getTwoDistinctIndices(pool.length, prev));
+        setBusy(false);
+      }, 900);
+      
+    } catch (error) {
+      console.log('Vote submission failed:', error);
       setBubble({ side: winnerIdx === 0 ? 'left' : 'right', text: `Recorded your choice` });
+      
+      // 错误情况下快速切换，只显示600ms
+      setTimeout(() => {
+        setBubble(null);
+        setPressedButton(null);
+        setPair((prev) => getTwoDistinctIndices(pool.length, prev));
+        setBusy(false);
+      }, 600);
     }
-    setTimeout(() => {
-      setBubble(null);
-      setPressedButton(null);
-      setPair((prev) => getTwoDistinctIndices(pool.length, prev));
-      setBusy(false);
-    }, 1200);
   }, [busy, pool, pair, track]);
 
   // 客户端挂载后再随机化，避免 Hydration mismatch
