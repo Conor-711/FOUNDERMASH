@@ -6,8 +6,8 @@ healthcheckPath = "/"
 healthcheckTimeout = 300
 restartPolicyType = "always"
 
-# Build command
-buildCommand = "npm ci && npx prisma generate && npm run build"
+# Build command - use production schema for PostgreSQL
+buildCommand = "npm ci && cp prisma/schema.production.prisma prisma/schema.prisma && npx prisma generate && npm run build"
 
 # Start command
 startCommand = "npx prisma migrate deploy && npm start"

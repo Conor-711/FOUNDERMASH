@@ -13,13 +13,20 @@
 3. 点击 "Add Service" → "Database" → "PostgreSQL"
 4. Railway会自动生成数据库连接信息
 
-### 步骤 2：配置环境变量
+### 步骤 2：自动Schema切换
+
+项目已配置自动在部署时切换到PostgreSQL schema：
+
+- **开发环境**：使用 `prisma/schema.prisma` (SQLite)
+- **生产环境**：自动使用 `prisma/schema.production.prisma` (PostgreSQL)
+
+Railway构建过程会自动切换schema，无需手动修改。
+
+### 步骤 3：配置环境变量
 
 在Railway项目的环境变量中设置：
 
 ```
-DATABASE_PROVIDER=postgresql
-DATABASE_URL=[Railway自动提供的PostgreSQL连接字符串]
 NODE_ENV=production
 NEXT_TELEMETRY_DISABLED=1
 ```
