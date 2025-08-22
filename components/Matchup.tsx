@@ -88,9 +88,7 @@ export default function Matchup({ founders, track }: { founders: Founder[]; trac
       setBubble({ side: winnerIdx === 0 ? 'left' : 'right', text: msg });
       
       // Track founder selection (异步，不阻塞UI)
-      analytics.trackFounderSelect(winner.slug, track || 'ALL').catch(() => {
-        // 忽略分析追踪错误
-      });
+      analytics.trackFounderSelect(winner.slug, track || 'ALL');
       
       // 成功情况下显示900ms统计信息，然后切换
       setTimeout(() => {
