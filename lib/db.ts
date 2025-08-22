@@ -35,6 +35,7 @@ try {
   console.error('Failed to initialize Prisma Client:', error);
   // Create a mock client for environments where database is not available
   prismaInstance = {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     $transaction: async (fn: any) => {
       // Mock transaction that returns empty results
       return await fn({
