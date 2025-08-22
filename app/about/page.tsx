@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function AboutPage() {
   return (
@@ -46,15 +47,17 @@ export default function AboutPage() {
               So I built this website to capture it, inspired by <strong>Facemash</strong> — the predecessor of Facebook.
               </p>
               <p className="text-base text-gray-700 mb-3">
-              Have fun!
+              Have fun CT!
               </p>
             </div>
           </section>
           <section className="rounded p-2">
             <div className="mb-4">
-              <img 
+              <Image 
                 src="/zuck.png" 
                 alt="Zuckerberg" 
+                width={400}
+                height={300}
                 className="mx-auto max-w-full h-auto rounded"
               />
             </div>

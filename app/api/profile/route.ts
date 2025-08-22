@@ -2,6 +2,22 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { loadFounders } from '@/data/load-founders';
 
+// Type definitions for database records
+interface UserVote {
+  sessionId: string;
+  aSlug: string;
+  bSlug: string;
+  winner: string;
+  track: string;
+  percentage: number;
+  createdAt: Date;
+}
+
+interface UserSession {
+  sessionId: string;
+  winner: string;
+}
+
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
@@ -31,7 +47,7 @@ export async function GET(req: NextRequest) {
 
     // Calculate most selected founder
     const selectedCounts = new Map<string, number>();
-    userVotes.forEach((vote: any) => {
+    userVotes.forEach((vote: UserVote) => {
       const count = selectedCounts.get(vote.winner) || 0;
       selectedCounts.set(vote.winner, count + 1);
     });
@@ -49,7 +65,7 @@ export async function GET(req: NextRequest) {
     const appearedIn = new Map<string, number>();
     const chosenCounts = new Map<string, number>();
 
-    userVotes.forEach((vote: any) => {
+    userVotes.forEach((vote: UserVote) => {
       // Count appearances
       const aCount = appearedIn.get(vote.aSlug) || 0;
       const bCount = appearedIn.get(vote.bSlug) || 0;
@@ -75,7 +91,7 @@ export async function GET(req: NextRequest) {
     // Find the choice with the lowest percentage (most unpopular/unique choice)
     let leastPopularVote: { aSlug: string; bSlug: string; winner: string; percentage: number } | null = null;
     let lowestPercentage = 101; // Start higher than possible percentage
-    userVotes.forEach((vote: any) => {
+    userVotes.forEach((vote: UserVote) => {
       if (vote.percentage < lowestPercentage) {
         lowestPercentage = vote.percentage;
         leastPopularVote = vote as { aSlug: string; bSlug: string; winner: string; percentage: number };
@@ -93,7 +109,7 @@ export async function GET(req: NextRequest) {
       });
       
       const sessionStats = new Map<string, Map<string, number>>();
-      allUserSessions.forEach((vote: any) => {
+      allUserSessions.forEach((vote: UserSession) => {
         if (!sessionStats.has(vote.sessionId)) {
           sessionStats.set(vote.sessionId, new Map());
         }
@@ -144,7 +160,7 @@ export async function GET(req: NextRequest) {
       const allVotes = await prisma.userVote.findMany();
       const sessionIgnoreStats = new Map<string, Map<string, { appeared: number; chosen: number }>>();
       
-      allVotes.forEach((vote: any) => {
+      allVotes.forEach((vote: UserVote) => {
         if (!sessionIgnoreStats.has(vote.sessionId)) {
           sessionIgnoreStats.set(vote.sessionId, new Map());
         }
