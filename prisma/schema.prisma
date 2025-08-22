@@ -1,6 +1,6 @@
-// SQLite database for local development
+// Database configuration for both development and production
 datasource db {
-  provider = "sqlite"
+  provider = env("DATABASE_PROVIDER") || "sqlite"
   url      = env("DATABASE_URL")
 }
 

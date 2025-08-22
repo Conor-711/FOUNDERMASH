@@ -12,12 +12,12 @@ try {
     log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
     datasources: {
       db: {
-        url: process.env.DATABASE_URL || 'file:./dev.db'
+        url: process.env.DATABASE_URL || 'file:./prisma/dev.db'
       }
     },
     // 优化数据库连接配置
     transactionOptions: {
-      timeout: 5000, // 5秒超时
+      timeout: 10000, // 10秒超时（生产环境可能需要更长时间）
     }
   });
   
