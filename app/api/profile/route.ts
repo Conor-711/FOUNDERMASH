@@ -19,7 +19,7 @@ export async function GET(req: NextRequest) {
 
     if (userVotes.length === 0) {
       return NextResponse.json({
-        mostSelected: null,
+        mostSelected: null, 
         mostIgnored: null,
         leastPopularChoice: null,
         totalVotes: 0,

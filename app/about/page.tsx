@@ -43,7 +43,7 @@ export default function AboutPage() {
               Whether they stick around or not.
               </p>
               <p className="text-base text-gray-700 mb-3">
-              So I built this website, inspired by <strong>Facemash</strong> — the predecessor of Facebook.
+              So I built this website to capture it, inspired by <strong>Facemash</strong> — the predecessor of Facebook.
               </p>
               <p className="text-base text-gray-700 mb-3">
               Have fun!

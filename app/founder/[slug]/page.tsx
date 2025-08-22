@@ -54,14 +54,20 @@ export default async function FounderPage({ params }: { params: Promise<{ slug: 
       <section className="mt-6">
         <h3 className="uppercase text-sm font-bold mb-3 tracking-wide">Rank</h3>
         <div className="flex gap-4">
-          <div className="flex items-center gap-2 border rounded px-3 py-2">
+          <Link 
+            href="/ranking" 
+            className="flex items-center gap-2 border rounded px-3 py-2 hover:bg-gray-50 hover:border-[#0b88b6] transition-colors cursor-pointer"
+          >
             <span className="text-xs font-bold bg-gray-100 rounded px-2 py-1">ALL</span>
-            <span className="text-lg font-extrabold">{allRank}</span>
-          </div>
-          <div className="flex items-center gap-2 border rounded px-3 py-2">
+            <span className="text-lg font-extrabold text-[#0b88b6]">{allRank}</span>
+          </Link>
+          <Link 
+            href={`/ranking?track=${encodeURIComponent(founder.rank.track)}`}
+            className="flex items-center gap-2 border rounded px-3 py-2 hover:bg-gray-50 hover:border-[#0b88b6] transition-colors cursor-pointer"
+          >
             <span className="text-xs font-bold bg-gray-100 rounded px-2 py-1">{founder.rank.track}</span>
-            <span className="text-lg font-extrabold">{trackRank}</span>
-          </div>
+            <span className="text-lg font-extrabold text-[#0b88b6]">{trackRank}</span>
+          </Link>
         </div>
       </section>
 
