@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
+import Analytics from '@/components/Analytics';
 
 export const metadata: Metadata = {
   title: "FOUNDERMASH",
@@ -27,6 +28,7 @@ export default function RootLayout({
             </Link>
           </header>
           <main className="max-w-[980px] mx-auto px-6 py-8">{children}</main>
+          <Analytics />
         </div>
       </body>
     </html>

@@ -28,7 +28,7 @@ export default function AboutPage() {
               <strong>Two crypto founders&apos; photos are shown side by side. Click on the one you find more based</strong>.
               </p>
               <p className="text-base text-gray-700 mb-3">
-              <strong>Each choice updates the ranking using the Elo rating system an d everyone begins at 1000 points.</strong>.
+              <strong>Each choice updates the ranking using the Elo rating system and everyone begins at 1k points.</strong>.
               </p>
             </div>
           </section>

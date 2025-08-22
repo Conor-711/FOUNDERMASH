@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { analytics } from '@/components/Analytics';
 
 type Founder = {
   slug: string;
@@ -73,6 +74,9 @@ export default function Matchup({ founders, track }: { founders: Founder[]; trac
         ? `${cnt} people (${pct}%) chose the same as you`
         : `${pct}% chose ${winner.name}`;
       setBubble({ side: winnerIdx === 0 ? 'left' : 'right', text: msg });
+      
+      // Track founder selection
+      analytics.trackFounderSelect(winner.slug, track || 'ALL');
     } catch {
       setBubble({ side: winnerIdx === 0 ? 'left' : 'right', text: `Recorded your choice` });
     }

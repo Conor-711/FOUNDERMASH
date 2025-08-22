@@ -64,3 +64,35 @@ model UserVote {
   @@map("user_votes")
 }
 
+// Page view tracking
+model PageView {
+  id        Int      @id @default(autoincrement())
+  page      String   // Page path (e.g., "/", "/ranking", "/founder/jason-zhao")
+  sessionId String?  // Browser session ID
+  userAgent String?  // Browser user agent
+  referrer  String?  // Referrer URL
+  createdAt DateTime @default(now())
+  
+  @@index([page])
+  @@index([sessionId])
+  @@index([createdAt])
+  @@map("page_views")
+}
+
+// Click event tracking
+model ClickEvent {
+  id        Int      @id @default(autoincrement())
+  eventType String   // Event type (e.g., "founder_select", "category_change", "nav_click")
+  target    String?  // Target element (e.g., founder slug, category name)
+  page      String   // Page where the event occurred
+  sessionId String?  // Browser session ID
+  metadata  String?  // Additional data as JSON string
+  createdAt DateTime @default(now())
+  
+  @@index([eventType])
+  @@index([target])
+  @@index([sessionId])
+  @@index([createdAt])
+  @@map("click_events")
+}
+
