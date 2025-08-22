@@ -18,7 +18,7 @@ export default function AboutPage() {
         <div className="space-y-4 text-center">
           {/* ABOUT FACEMASH Section */}
           <section className="rounded p-4">
-            <h2 className="uppercase text-sm font-bold mb-3 tracking-wide">About Facemash</h2>
+            <h2 className="uppercase text-sm font-bold mb-3 tracking-wide">About FounderMash</h2>
             <div className="mb-4">
               <p className="text-lg text-gray-700 mb-3">
                 FounderMash is a fun experiment.
@@ -28,7 +28,7 @@ export default function AboutPage() {
               <strong>Two crypto founders&apos; photos are shown side by side. Click on the one you find more based</strong>.
               </p>
               <p className="text-base text-gray-700 mb-3">
-              <strong>Each choice updates the ranking using the Elo rating system</strong>.
+              <strong>Each choice updates the ranking using the Elo rating system an d everyone begins at 1000 points.</strong>.
               </p>
             </div>
           </section>
@@ -47,17 +47,17 @@ export default function AboutPage() {
               So I built this website to capture it, inspired by <strong>Facemash</strong> — the predecessor of Facebook.
               </p>
               <p className="text-base text-gray-700 mb-3">
-              Have fun CT!
+              Have fun!
               </p>
             </div>
           </section>
-          <section className="rounded p-2">
+          <section className="rounded">
             <div className="mb-4">
               <Image 
                 src="/zuck.png" 
                 alt="Zuckerberg" 
-                width={400}
-                height={300}
+                width={250}
+                height={200}
                 className="mx-auto max-w-full h-auto rounded"
               />
             </div>
